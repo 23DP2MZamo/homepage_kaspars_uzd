@@ -1,20 +1,9 @@
-import './App.css'
-import './components/header.jsx'
-import'./components/main.jsx'
-import'./components/footer.jsx'
-import { RouterProvider } from 'react-router'
-import { router } from './routes.js'
+import { RouterProvider } from 'react-router';
+import { router } from './routes';
+import './App.css';
 
 function App() {
-
-  return (
-    <>
-    <RouterProvider router={router}></RouterProvider>
-    <header/>
-    <main/>
-    <footer/>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

@@ -1,0 +1,170 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.task-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.task-item.completed {
+  opacity: 0.7;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-checkbox {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.task-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.task-checkbox label {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.task-checkbox label:hover {
+  border-color: #ff6b6b;
+}
+
+.task-checkbox input[type="checkbox"]:checked + label {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+  border-color: #ff6b6b;
+}
+
+.task-checkbox input[type="checkbox"]:checked + label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+}
+
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.task-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.task-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.task-category-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.priority-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.priority-high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.priority-medium {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.priority-low {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #374151;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.btn-icon:hover {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #6b7280;
+}
+
+
+.empty-state h3 {
+  font-size: 20px;
+  color: #374151;
+  margin: 0 0 8px 0;
+}
+
+.empty-state p {
+  font-size: 14px;
+  margin: 0;
+}
